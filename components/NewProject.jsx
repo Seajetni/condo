@@ -44,7 +44,7 @@ export default function NewProject() {
       <ul className=" bg-white px-10 py-2 rounded-xl mt-2">
         {content.map((item, index) =>
           item.title ? (
-            <li>
+            <li key={index}>
               <Link className="flex bg-white rounded-xl mb-2 " href={'/'}>
                 <Image
                   src={item.img}
