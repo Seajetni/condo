@@ -58,8 +58,7 @@ export default function Popular() {
         </div>
         <div>
           <ul className="flex mt-1 overflow-x-auto">
-            {content.map((item, index) =>
-              item.title ? (
+            {content.map((item, index) =>(
                 <li key={index} className="mx-1">
                   <Link
                     href="#"
@@ -160,8 +159,6 @@ export default function Popular() {
                     </div>
                   </Link>
                 </li>
-              ) : (
-                <div>loading...</div>
               )
             )}
           </ul>

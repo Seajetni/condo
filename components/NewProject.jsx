@@ -42,8 +42,7 @@ export default function NewProject() {
         <p className=" text-3xl">ประกาศล่าสุด</p>
       </div>
       <ul className=" bg-white px-10 py-2 rounded-xl mt-2">
-        {content.map((item, index) =>
-          item.title ? (
+        {content.map((item, index) => (
             <li key={index}>
               <Link className="flex bg-white rounded-xl mb-2 " href={'/'}>
                 <Image
@@ -91,10 +90,7 @@ export default function NewProject() {
                 </div>
               </Link>
             </li>
-          ) : (
-            <li></li>
-          )
-        )}
+          ))}
       </ul>
     </div>
   );
