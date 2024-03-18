@@ -8,7 +8,7 @@ export default function Layout(props) {
 
  
 
-    <div className=' mx-20 my-2'>
+    <div className='  my-2'>
         {props.children}
     </div>
 

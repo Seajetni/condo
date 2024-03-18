@@ -9,12 +9,12 @@ export default function Home() {
       <Layout>
         <div className="">
 
-        <div>
+        <div className="mx-20">
             <Popular />
           </div>
 
 
-          <div>
+          <div className="mx-20">
             <NewProject  />
           </div>
 

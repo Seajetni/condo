@@ -2,8 +2,52 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 export default function Popular() {
+
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handlePrev = () => {
+    setStartIndex(prevIndex => Math.max(prevIndex - 1, 0));
+  };
+
+  const handleNext = () => {
+    setStartIndex(prevIndex => Math.min(prevIndex + 1, content.length - 5));
+  };
+
+
   const content = [
     {
+      img: "/hotel4.jpg",
+      price: 240000,
+      title: "รีสอร์ทว่างให้เช่า",
+      Parking: 2,
+      bedrooms: 4,
+      bathrooms: 1,
+    },
+    {
+      img: "/hotel2.jpg",
+      price: 1200,
+      title: "โรงเเรงว่างให้เช่า",
+      Parking: 1,
+      bedrooms: 2,
+      bathrooms: 2,
+    },
+    {
+      img: "/hotel4.jpg",
+      price: 240000,
+      title: "รีสอร์ทว่างให้เช่า",
+      Parking: 2,
+      bedrooms: 4,
+      bathrooms: 1,
+    },
+    {
+      img: "/hotel2.jpg",
+      price: 1200,
+      title: "โรงเเรงว่างให้เช่า",
+      Parking: 1,
+      bedrooms: 2,
+      bathrooms: 2,
+    },
+        {
       img: "/hotel4.jpg",
       price: 240000,
       title: "รีสอร์ทว่างให้เช่า",
@@ -43,126 +87,127 @@ export default function Popular() {
       bedrooms: 1,
       bathrooms: 1,
     },
+    {
+      img: "/hotel3.jpg",
+      price: 100000,
+      title: "คอนโดว่างให้เช่า",
+      Parking: 3,
+      bedrooms: 5,
+      bathrooms: 6,
+    },
+    {
+      img: "/hotel4.jpg",
+      price: 990,
+      title: "ว่างให้เช่า",
+      Parking: 1,
+      bedrooms: 1,
+      bathrooms: 1,
+    },
+    {
+      img: "/hotel4.jpg",
+      price: 990,
+      title: "ว่างให้เช่า",
+      Parking: 1,
+      bedrooms: 1,
+      bathrooms: 1,
+    },
   ];
 
   return (
     <>
       <div className="">
         <div>
-          <h1 className="  font-samibold text-3xl ">
-            Popular Project
-          </h1>
+          <h1 className="  font-samibold text-3xl ">Popular Project</h1>
           <hr />
           <hr />
           <h2> โครงการยอดนิยม</h2>
         </div>
-        <div>
-          <ul className="flex mt-1 overflow-x-auto">
-            {content.map((item, index) =>(
-                <li key={index} className="mx-1">
-                  <Link
-                    href="#"
-                    className="block bg-white rounded-lg p-5 shadow-sm shadow-indigo-100 "
-                  >
+        <div className="">
+        <ul className="flex mt-1 overflow-x-auto">
+          {content.slice(startIndex, startIndex + 5).map((item, index) => (
+            <li key={index} className="mx-1">
+              <Link href={"/"}>
+                <div className="relative">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={300}
+                    height={100}
+                    className=""
+                  />
+                  <div className="absolute bottom-0 left-0 text-white p-2 flex justify-between w-full">
+                    <p>{item.title}</p>
                     <Image
-                      alt="hotel"
-                      src={item.img}
-                      className="w-full h-full rounded-md object-cover"
+                      src={
+                        "https://media.istockphoto.com/id/1472818295/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%99%E0%B8%88%E0%B9%8C%E0%B9%81%E0%B8%9B%E0%B8%A3%E0%B8%87%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B0%E0%B9%81%E0%B8%AA%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2%E0%B9%81%E0%B8%95%E0%B8%81%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%9A%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%99%E0%B8%B2%E0%B8%A1%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%9C%E0%B8%99%E0%B8%B1%E0%B8%87%E0%B8%8B%E0%B8%B5%E0%B9%80%E0%B8%A1%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=UA7q1HmbjfIvUydWf093rn1BGfhTCrb15lbByPWAhE4="
+                      }
                       width={300}
                       height={100}
+                      alt={item.title}
+                      className="w-16"
                     />
-
-                    <div className="mt-2">
-                      <dl>
-                        <div>
-                          <dt className="sr-only">Price</dt>
-                          <dd className="text-sm text-gray-500">
-                            $ {item.price}
-                          </dd>
-                        </div>
-
-                        <div>
-                          <dt className="sr-only">Address</dt>
-                          <dd className="font-medium">{item.title}</dd>
-                        </div>
-                      </dl>
-
-                      <div className="mt-6 flex items-center gap-8 text-xs">
-                        <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                          <svg
-                            className="size-4 text-indigo-700"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-                            />
-                          </svg>
-
-                          <div className="mt-1.5 sm:mt-0">
-                            <p className="text-gray-500">Parking</p>
-                            <p className="font-medium">{item.Parking} spaces</p>
-                          </div>
-                        </div>
-
-                        <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                          <svg
-                            className="size-4 text-indigo-700"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                            />
-                          </svg>
-
-                          <div className="mt-1.5 sm:mt-0">
-                            <p className="text-gray-500">Bathroom</p>
-                            <p className="font-medium">
-                              {item.bathrooms} rooms
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                          <svg
-                            className="size-4 text-indigo-700"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                            />
-                          </svg>
-
-                          <div className="mt-1.5 sm:mt-0">
-                            <p className="text-gray-500">Bedroom</p>
-                            <p className="font-medium">{item.bedrooms} rooms</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
+                  </div>
+                </div>
+                <div className="bg-white text-sm flex justify-between items-center">
+                  <div>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <p className="text-[#505050]">Lorem ipsum </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </div>
+                <div className="bg-white text-sm rounded-md flex justify-between items-center">
+                  <div>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <p className="text-[#505050]">Lorem ipsum </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {content.length > 5 && (
+        <div className="flex justify-center mt-2 ">
+          {[...Array(Math.ceil(content.length / 5)).keys()].map((num) => (
+            <button
+              key={num}
+              onClick={() => setStartIndex(num * 5)}
+              className={`mx-1 p-1 rounded-full focus:outline-none ${
+                startIndex === num * 5 ? 'bg-blue-500 text-white  ' : 'bg-gray-300 '
+              }`}
+            >
+              {''}
+            </button>
+          ))}
         </div>
+      )}
       </div>
     </>
   );
