@@ -10,12 +10,12 @@ export default function Home() {
         <div className="  px-80">
 
         <div>
-            <Popular />
+            <Popular  key={index}/>
           </div>
 
-          
+
           <div>
-            <NewProject />
+            <NewProject  key={index}/>
           </div>
 
 
