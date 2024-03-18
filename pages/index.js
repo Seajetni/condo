@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <div className=" bg-slate-100">
       <Layout>
-        <div className="  px-80">
+        <div className="">
 
         <div>
-            <Popular  />
+            <Popular />
           </div>
 
 
@@ -18,7 +18,7 @@ export default function Home() {
             <NewProject  />
           </div>
 
-
+    
 
           <div>
             <Collection />

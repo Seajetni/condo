@@ -37,37 +37,33 @@ export default function NewProject() {
     },
   ];
   return (
-    <div className="mt-10">
+    <div className="mt-10 w-full h-full">
       <div >
         <p className=" text-3xl">ประกาศล่าสุด</p>
       </div>
-      <ul className=" bg-white px-10 py-2 rounded-xl mt-2">
+      <div className="flex">
+          <div>
+          <ul className=" bg-white px-10 py-2 rounded-xl mt-2 ">
         {content.map((item, index) => (
             <li key={index}>
-              <Link className="flex bg-white rounded-xl mb-2 " href={'/'}>
+              <Link className="flex bg-white rounded-xl mb-2 h-[250px]" href={'/'}>
                 <Image
                   src={item.img}
-                  alt=""
+                  alt="condo"
                   priority
                   width={500}
                   height={100}
+                  className=" w-[800px]"
                 />
                 <div className="  w-full mx-10  grid grid-rows-4 ">
-                  <div className="flex">
-                    <p className="bg-[#FF7A00] text-white px-2  py-2  w-20 h-8 rounded-xl  text-xs ">
+
+                  <div>
+                    <p className="text-xl flex ">
+                      {item.title}
+                      <p className="bg-[#FF7A00] text-white px-2  py-2  w-20 h-8 rounded-xl  text-xs ">
                       New Project
                     </p>
-                    <p className=" border border-teal-950 text-teal-950  w-15 h-8 px-2 py-2  rounded-xl  text-xs mx-2">
-                      Condo
                     </p>
-                  </div>
-                  <div>
-                    <p className="text-xl ">
-                      {item.title}
-                    </p>
-                  </div>
-                  <div>
-                    <p className=" text-sky-600 text-lg">Price: N/A</p>
                   </div>
                   <div className="flex justify-between">
                     <div>
@@ -89,9 +85,18 @@ export default function NewProject() {
                   </div>
                 </div>
               </Link>
+              <hr />
+              <hr  className=" mb-1"/>
             </li>
           ))}
       </ul>
+          </div>
+              
+          <div className="w-1/2  bg-white p-2 m-2">
+            <p>Facebook page</p>
+          </div>
+      </div>
+  
     </div>
   );
 }
