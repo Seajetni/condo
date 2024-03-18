@@ -84,12 +84,13 @@ export default function NewProject() {
                   />
                   <div className="  w-full mx-10  grid grid-rows-4 ">
                     <div>
-                      <p className="text-xl flex ">
-                        {item.title}
-                        <p className="bg-[#FF7A00] text-white px-2  py-2  w-20 h-8 rounded-xl  text-xs ">
+                      <div className=" flex">
+               
+                         {item.title}
+                         <p className="bg-[#FF7A00] text-white px-2   py-2  w-20 h-full rounded-xl  text-xs ">
                           New Project
                         </p>
-                      </p>
+                      </div>
                     </div>
                     <div className="flex justify-between">
                       <div>
