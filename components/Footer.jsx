@@ -6,7 +6,7 @@ export default function Footer() {
       <div className=" grid grid-cols-4">
         <div>
           <ul>
-            <h3 className=" font-bold">Lorem ipsum </h3>
+            <h3 className="font-bold">Lorem ipsum </h3>
             <li>Lorem ipsum </li>
             <li>Lorem ipsum </li>
             <li>Lorem ipsum </li>
