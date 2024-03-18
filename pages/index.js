@@ -8,13 +8,17 @@ export default function Home() {
     <div className=" bg-slate-100">
       <Layout>
         <div className="  px-80">
+
+        <div>
+            <Popular />
+          </div>
+
+          
           <div>
             <NewProject />
           </div>
 
-          <div>
-            <Popular />
-          </div>
+
 
           <div>
             <Collection />
